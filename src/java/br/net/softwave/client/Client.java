@@ -12,10 +12,10 @@ import javafx.util.Duration;
 
 public class Client extends Application {
     
-    public static final String ENDERECO_SERVIDOR = "http://localhost:8080/";
-    public static final String ENDERECO_API = ENDERECO_SERVIDOR + "api/";
-    public static final String ENDERECO_API_USUARIO = ENDERECO_API + "usuario/";
-    public static final String ENDERECO_API_TEST = ENDERECO_API + "right/";
+    public static final String ENDERECO_SERVIDOR = "http://localhost:8080/server/";
+    public static final String ENDERECO_SERVICE = ENDERECO_SERVIDOR + "service/";
+    public static final String ENDERECO_USUARIO = ENDERECO_SERVICE + "usuario/";
+    public static final String ENDERECO_LOGIN = ENDERECO_SERVICE + "login/";
 
     @Override
     public void start(Stage primaryStage) throws Exception {

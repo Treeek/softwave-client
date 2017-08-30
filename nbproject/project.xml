@@ -11,13 +11,15 @@
             <test-roots>
                 <root id="test.src.dir" name="Test Packages"/>
             </test-roots>
-            <included-library dirs="200">file.reference.asm-3.3.1.jar</included-library>
             <included-library dirs="200">file.reference.jersey-bundle-1.19.4.jar</included-library>
-            <included-library dirs="200">file.reference.jersey-server-1.19.4.jar</included-library>
-            <included-library dirs="200">file.reference.json-20170516.jar</included-library>
             <included-library dirs="200">file.reference.AwesomeUI.jar</included-library>
             <included-library dirs="200">file.reference.jfoenix.jar</included-library>
-            <included-library dirs="200">file.reference.jersey-core-1.19.4.jar</included-library>
+            <included-library dirs="200">file.reference.jersey-json-1.19.4.jar</included-library>
+            <included-library dirs="200">file.reference.jersey-client-1.19.4.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-core-asl-1.9.13.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-jaxrs-1.9.13.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-mapper-asl-1.9.13.jar</included-library>
+            <included-library dirs="200">file.reference.jackson-xc-1.9.13.jar</included-library>
         </data>
         <libraries xmlns="http://www.netbeans.org/ns/ant-project-libraries/1">
             <definitions>.\lib\nblibraries.properties</definitions>
