@@ -1,6 +1,8 @@
 package br.net.softwave.client.controller;
 
 import awesomeui.animation.ShakeTransition;
+import br.net.softwave.client.domain.Credenciais;
+import br.net.softwave.client.domain.Usuario;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.sun.jersey.api.client.Client;
@@ -27,22 +29,21 @@ public class LoginController implements Initializable {
     private JFXPasswordField campoSenha;
     @FXML
     private Label rotuloErro;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO: implementar a máscara nos campos
     }
-    
+
     /**
      * Valida usuário e entra na tela principal.
      * <p>
-     * Esse método é responsável por validar o prontuário e senha
-     * através de uma requesição http ao servidor, que retornará se
-     * os dados inseridos existem ou não. Caso o usuário exista,
-     * o mesmo será redirecionado para a tela principal, caso contrário,
-     * será exibida uma mensagem de informação inválida na tela de login
+     * Esse método é responsável por validar o prontuário e senha através de uma
+     * requesição http ao servidor, que retornará se os dados inseridos existem
+     * ou não. Caso o usuário exista, o mesmo será redirecionado para a tela
+     * principal, caso contrário, será exibida uma mensagem de informação
+     * inválida na tela de login
      */
-    
     @FXML
     private void entrarNaTelaPrincipal() {
         if ((campoProntuario.getText() != null && !campoProntuario.getText().isEmpty()) && (campoSenha.getText() != null && !campoSenha.getText().isEmpty())) {
@@ -50,31 +51,33 @@ public class LoginController implements Initializable {
                 Client cliente;
                 WebResource webResource;
                 ClientResponse resposta = null;
-                
+                Credenciais credenciais = new Credenciais(campoProntuario.getText(), campoSenha.getText());
+                System.out.println(credenciais);
+
                 try {
                     cliente = Client.create();
-                    webResource = cliente.resource(br.net.softwave.client.Client.ENDERECO_API_TEST);
-                    resposta = webResource.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
+                    webResource = cliente.resource(br.net.softwave.client.Client.ENDERECO_LOGIN);
+                    resposta = webResource
+                            .type(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+                            .post(ClientResponse.class, credenciais);
 
-                    switch (resposta.getStatus()) {
-                        case 200:
-                            System.out.println(resposta.getEntity(String.class));
-                            break;
-                        case 204:
-                            new ShakeTransition(vBox)
-                                    .setDuration(Duration.millis(500))
-                                    .setOnFinish((event) -> {
-                                        rotuloErro.setText("Usuário ou senha incorretos");
-                                    })
-                                    .play();
-                            break;
-                        default:
-                            new ShakeTransition(vBox)
-                                    .setDuration(Duration.millis(500))
-                                    .setOnFinish((event) -> {
-                                        rotuloErro.setText("Ops! Estou tendo problemas internos");
-                                    })
-                                    .play();
+                    if (resposta.getStatus() == ClientResponse.Status.OK.getStatusCode()) {
+                        System.out.println(resposta.getEntity(Usuario.class));
+                    } else if (resposta.getStatus() == ClientResponse.Status.NO_CONTENT.getStatusCode()) {
+                        new ShakeTransition(vBox)
+                                .setDuration(Duration.millis(500))
+                                .setOnFinish((event) -> {
+                                    rotuloErro.setText("Usuário ou senha incorretos");
+                                })
+                                .play();
+                    } else {
+                        new ShakeTransition(vBox)
+                                .setDuration(Duration.millis(500))
+                                .setOnFinish((event) -> {
+                                    rotuloErro.setText("Ops! Estou tendo problemas internos");
+                                })
+                                .play();
                     }
                 } catch (ClientHandlerException | UniformInterfaceException erro) {
                     System.out.println(String.format("[%s]: %s \nCausa: %s", "requesição de login", erro.getMessage(), erro.getCause()));
@@ -101,5 +104,5 @@ public class LoginController implements Initializable {
                     .play();
         }
     }
-    
+
 }
