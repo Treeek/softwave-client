@@ -1,6 +1,7 @@
 package br.net.softwave.client;
 
 import awesomeui.animation.FadeInTransition;
+import br.net.softwave.client.util.Screen;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +26,10 @@ public class Client extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Carrega o ícone do aplicativo
-        Image icon = new Image(getClass().getResourceAsStream(ENDERECO_IMG_ICON));
+        
+        Screen.mainScene(primaryStage);
+        
+        /*Image icon = new Image(getClass().getResourceAsStream(ENDERECO_IMG_ICON));
         
         // Inicializa a página de login
         Parent loginRoot = FXMLLoader.load(getClass().getResource(ENDERECO_FXML_LOGIN));
@@ -46,7 +50,7 @@ public class Client extends Application {
         
         new FadeInTransition(loginRoot)
                 .setDuration(Duration.seconds(1))
-                .play();
+                .play();*/
     }
 
     public static void main(String[] args) {

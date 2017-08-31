@@ -11,5 +11,13 @@
 }
 
 .jfx-hamburger StackPane {
-    -fx-background-color: lightgray;
+    -fx-background-color: grey;
+}
+
+#side-menu {
+    -fx-background-color: #f1f1f1;  
+}
+
+#menu-buttons {
+    -fx-alignment: left;
 }
