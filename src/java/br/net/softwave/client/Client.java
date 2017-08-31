@@ -1,6 +1,7 @@
 package br.net.softwave.client;
 
 import awesomeui.animation.FadeInTransition;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,14 +17,18 @@ public class Client extends Application {
     public static final String ENDERECO_SERVICE = ENDERECO_SERVIDOR + "service/";
     public static final String ENDERECO_USUARIO = ENDERECO_SERVICE + "usuario/";
     public static final String ENDERECO_LOGIN = ENDERECO_SERVICE + "login/";
+    
+    public static final String ENDERECO_FXML_LOGIN = "view/login/Login.fxml";
+    public static final String ENDERECO_FXML_MAIN = "view/main/Main.fxml";
+    public static final String ENDERECO_IMG_ICON = "view/img/icon.png";
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws IOException {
         // Carrega o ícone do aplicativo
-        Image icon = new Image(getClass().getResourceAsStream("view/img/icon.png"));
+        Image icon = new Image(getClass().getResourceAsStream(ENDERECO_IMG_ICON));
         
         // Inicializa a página de login
-        Parent loginRoot = FXMLLoader.load(getClass().getResource("view/login/Login.fxml"));
+        Parent loginRoot = FXMLLoader.load(getClass().getResource(ENDERECO_FXML_LOGIN));
         
         Scene loginScene = new Scene(loginRoot);
         
@@ -34,12 +39,13 @@ public class Client extends Application {
         primaryStage.getScene().setFill(null);
         primaryStage.getIcons().add(icon);
         primaryStage.setResizable(false);
+        primaryStage.centerOnScreen();
         primaryStage.show();
                 
         loginRoot.setOpacity(0);
         
         new FadeInTransition(loginRoot)
-                .setDuration(Duration.millis(500))
+                .setDuration(Duration.seconds(1))
                 .play();
     }
 

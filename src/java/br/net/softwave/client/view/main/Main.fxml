@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-
-<BorderPane id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1280.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwave.client.controller.MainController">
-   <top>
-      <ToolBar id="toolbar" prefHeight="56.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
-         <items>
-            <JFXHamburger onMouseClicked="#onclickHambuger" />
-         </items>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <padding>
-            <Insets left="20.0" right="20.0" />
-         </padding>
-      </ToolBar>
-   </top>
+<BorderPane id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="1280.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.net.softwave.client.controller.MainController">
+    <top>
+        <ToolBar id="toolbar" prefHeight="56.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+            <effect>
+                <DropShadow color="lightgrey" offsetX="0.0" offsetY="1.0" /> 
+            </effect>
+            <items>
+                <JFXHamburger onMouseClicked="#onclickHambuger">
+               <padding>
+                  <Insets left="8.0" right="8.0" />
+               </padding></JFXHamburger>
+                <Label text="CodeName" textFill="#0d47a1">
+                    <padding>
+                        <Insets left="16.0" right="16.0" />
+                    </padding>
+                    <font>
+                        <Font name="Sansation Regular" size="24.0" />
+                    </font>
+                </Label>
+            </items>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </ToolBar>
+    </top>
 </BorderPane>

@@ -1,5 +1,9 @@
+#main {
+    -fx-background-color: #fafafa;
+}
+
 #toolbar {
-    -fx-background-color: #FFC107;
+    -fx-background-color: white;
 }
 
 .jfx-hamburger {
@@ -7,5 +11,5 @@
 }
 
 .jfx-hamburger StackPane {
-    -fx-background-color: white;
+    -fx-background-color: lightgray;
 }
