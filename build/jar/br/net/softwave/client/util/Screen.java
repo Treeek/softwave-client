@@ -38,7 +38,7 @@ public class Screen {
         primaryStage.show();
         
         new FadeInUpTransition(mainRoot)
-                .setDuration(Duration.millis(500))
+                .setDuration(Duration.seconds(1))
                 .play();
     }
     
