@@ -11,7 +11,7 @@
 }
 
 .jfx-hamburger StackPane {
-    -fx-background-color: grey;
+    -fx-background-color: black;
 }
 
 #side-menu {
@@ -20,4 +20,12 @@
 
 #menu-buttons {
     -fx-alignment: left;
+}
+
+.jfx-tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: white;
+}
+
+.tab .tab-label {
+    -fx-text-fill: grey;
 }
