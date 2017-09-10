@@ -21,6 +21,10 @@ public class Client extends Application {
     
     public static final String ENDERECO_FXML_LOGIN = "view/login/Login.fxml";
     public static final String ENDERECO_FXML_MAIN = "view/main/Main.fxml";
+    public static final String ENDERECO_FXML_MAIN_FORUNS = "view/main/foruns/Foruns.fxml";
+    public static final String ENDERECO_FXML_MAIN_AREASCONHECIMENTO = "view/main/areasconhecimento/AreasConhecimento.fxml";
+    public static final String ENDERECO_FXML_MAIN_CHAT = "view/main/chat/Chat.fxml";
+    public static final String ENDERECO_FXML_MAIN_ATIVIDADES = "view/main/atividades/Atividades.fxml";
     public static final String ENDERECO_IMG_ICON = "view/img/icon.png";
 
     @Override

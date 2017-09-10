@@ -5,7 +5,6 @@
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -64,7 +63,7 @@
             </AnchorPane>
             <VBox alignment="TOP_CENTER" layoutY="160.0" prefHeight="512.0" prefWidth="298.0">
                <children>
-                  <JFXButton id="menu-buttons" onAction="#abrirTelaForuns" prefHeight="59.0" prefWidth="298.0" ripplerFill="#4caf50" text="Foruns" textAlignment="RIGHT">
+                  <JFXButton id="forunsButton" fx:id="forunsButton" onAction="#handleForuns" prefHeight="59.0" prefWidth="298.0" ripplerFill="#4caf50" text="Foruns" textAlignment="RIGHT">
                      <font>
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
@@ -82,7 +81,7 @@
                         <Insets bottom="24.0" left="16.0" right="16.0" top="24.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton id="menu-buttons" onAction="#abrirTelaAreasConhecimento" prefHeight="59.0" prefWidth="298.0" ripplerFill="#ffeb3b" text="Áreas do conhecimento">
+                  <JFXButton id="areasConhecimentoButton" fx:id="areasConhecimentoButton" onAction="#handleAreasConhecimento" prefHeight="59.0" prefWidth="298.0" ripplerFill="#ffeb3b" text="Áreas do conhecimento">
                      <font>
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
@@ -100,7 +99,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton id="menu-buttons" onAction="#abrirTelaChat" prefHeight="59.0" prefWidth="298.0" ripplerFill="#2196f3" text="Chat">
+                  <JFXButton id="chatButton" fx:id="chatButton" onAction="#handleChat" prefHeight="59.0" prefWidth="298.0" ripplerFill="#2196f3" style="-fx-border-style: 1px solid red;" text="Chat">
                      <font>
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
@@ -117,8 +116,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </JFXButton>
-                  <JFXButton id="menu-buttons" onAction="#abrirTelaAtividades" prefHeight="59.0" prefWidth="298.0" ripplerFill="#f44336" text="Atividades">
+                  <JFXButton id="atividadesButton" fx:id="atividadesButton" onAction="#handleAtividades" prefHeight="59.0" prefWidth="298.0" ripplerFill="#f44336" text="Atividades">
                      <font>
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
@@ -142,24 +144,6 @@
       </AnchorPane>
    </left>
    <center>
-      <JFXTabPane BorderPane.alignment="CENTER">
-         <tabs>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </Tab>
-         </tabs>
-      </JFXTabPane>
+      <JFXTabPane fx:id="tabMain" side="BOTTOM" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

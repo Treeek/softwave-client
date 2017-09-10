@@ -18,8 +18,8 @@
     -fx-background-color: #f1f1f1;  
 }
 
-#menu-buttons {
-    -fx-alignment: left;
+#forunsButton, #areasConhecimentoButton, #chatButton, #atividadesButton {
+    -fx-alignment: LEFT;
 }
 
 .jfx-tab-pane .tab-header-area .tab-header-background {
@@ -27,5 +27,11 @@
 }
 
 .tab .tab-label {
-    -fx-text-fill: grey;
+    -fx-text-fill: #424242;
+    -fx-font-family: "Roboto Lt";
+    -fx-font-size: 16px;
+}
+
+.jfx-tab-pane .tab-selected-line {
+    -fx-stroke: red;
 }
