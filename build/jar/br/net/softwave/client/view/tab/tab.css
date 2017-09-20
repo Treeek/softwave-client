@@ -1,0 +1,9 @@
+.tab .tab-label {
+    -fx-text-fill: grey;
+}
+
+#close-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 5em;
+    -fx-padding: -3 3 -3 3;
+}

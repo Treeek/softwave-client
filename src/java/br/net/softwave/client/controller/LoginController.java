@@ -1,8 +1,9 @@
 package br.net.softwave.client.controller;
 
+import awesomeui.animation.FadeOutTransition;
 import awesomeui.animation.ShakeTransition;
 import br.net.softwave.client.domain.Credenciais;
-import br.net.softwave.client.domain.Usuario;
+import br.net.softwave.client.util.Screen;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.sun.jersey.api.client.Client;
@@ -10,12 +11,16 @@ import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.api.client.WebResource;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.ws.rs.core.MediaType;
 
@@ -63,7 +68,16 @@ public class LoginController implements Initializable {
                             .post(ClientResponse.class, credenciais);
 
                     if (resposta.getStatus() == ClientResponse.Status.OK.getStatusCode()) {
-                        System.out.println(resposta.getEntity(Usuario.class));
+                        new FadeOutTransition(vBox)
+                                .setDuration(Duration.seconds(1))
+                                .setOnFinish((event) -> {
+                                    try {
+                                        Screen.mainScene((Stage) vBox.getScene().getWindow());
+                                    } catch (IOException ex) {
+                                        Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                })
+                                .play();
                     } else if (resposta.getStatus() == ClientResponse.Status.NO_CONTENT.getStatusCode()) {
                         new ShakeTransition(vBox)
                                 .setDuration(Duration.millis(500))
