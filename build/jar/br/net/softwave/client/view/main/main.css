@@ -33,5 +33,5 @@
 }
 
 .jfx-tab-pane .tab-selected-line {
-    -fx-stroke: red;
+    -fx-border-color: red;
 }

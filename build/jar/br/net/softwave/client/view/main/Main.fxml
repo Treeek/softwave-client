@@ -99,7 +99,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton id="chatButton" fx:id="chatButton" onAction="#handleChat" prefHeight="59.0" prefWidth="298.0" ripplerFill="#2196f3" text="Chat">
+                  <JFXButton id="chatButton" fx:id="chatButton" onAction="#handleChat" prefHeight="59.0" prefWidth="298.0" ripplerFill="#2196f3" style="-fx-border-style: 1px solid red;" text="Chat">
                      <font>
                         <Font name="Roboto Regular" size="16.0" />
                      </font>
@@ -116,6 +116,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
                   </JFXButton>
                   <JFXButton id="atividadesButton" fx:id="atividadesButton" onAction="#handleAtividades" prefHeight="59.0" prefWidth="298.0" ripplerFill="#f44336" text="Atividades">
                      <font>

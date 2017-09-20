@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/Client.java</file>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/view/main/main.css</file>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/view/main/Main.fxml</file>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/controller/MainController.java</file>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/util/CustomTab.java</file>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/view/main/areasconhecimento/AreasConhecimento.fxml</file>
-            <file>file:/C:/Users/gmoch/Dropbox/Projects/GitHub/softwave-client/src/java/br/net/softwave/client/util/ResizeWidthTransition.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
